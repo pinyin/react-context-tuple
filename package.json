@@ -13,6 +13,9 @@
     "prepublishOnly": "rm -rf dist && npx tsc",
     "test": "npx jest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pinyin/react-context-tuple.git"
