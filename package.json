@@ -1,5 +1,5 @@
 {
-  "name": "@pinyin/react-context-tuple",
+  "name": "react-context-tuple",
   "version": "0.0.1",
   "description": "Flatten contexts",
   "main": "dist/index.js",
