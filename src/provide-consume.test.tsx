@@ -1,8 +1,8 @@
-import {nothing} from '@pinyin/types'
+import { nothing } from '@pinyin/types'
 import * as React from 'react'
-import {create} from 'react-test-renderer'
-import {consume} from './consume'
-import {provide} from './provide'
+import { create } from 'react-test-renderer'
+import { consume } from './consume'
+import { provide } from './provide'
 
 describe(`${provide.name}-${consume.name}`, () => {
     const c1: number = 0
@@ -18,17 +18,19 @@ describe(`${provide.name}-${consume.name}`, () => {
     const Consumes = consume(C1.Consumer, C2.Consumer, C3.Consumer)
 
     test(`provider should be renderable`, () => {
-        const renderer = create(<Provides values={[1, '2', () => nothing]}/>)
+        const renderer = create(<Provides values={[1, '2', () => nothing]} />)
         expect(renderer.root.type).toEqual(Provides)
     })
 
     test(`consumer should be renderable`, () => {
-        const renderer = create(<Consumes/>)
+        const renderer = create(<Consumes />)
         expect(renderer.root.type).toEqual(Consumes)
     })
 
     test(`consumer should receive default contents when no provider is present`, () => {
-        const renderer = create(<Consumes>{(c1, c2, c3) => `${c1}, ${c2}, ${c3}`}</Consumes>)
+        const renderer = create(
+            <Consumes>{(c1, c2, c3) => `${c1}, ${c2}, ${c3}`}</Consumes>,
+        )
         expect(renderer.root.children).toEqual([`${c1}, ${c2}, ${c3}`])
     })
 
@@ -36,9 +38,11 @@ describe(`${provide.name}-${consume.name}`, () => {
         const renderer = create(
             <Provides values={[1, 's', () => 1]}>
                 <Consumes>{(c1, c2, c3) => `${c1}, ${c2}, ${c3}`}</Consumes>
-            </Provides>
+            </Provides>,
         )
-        expect(renderer.root.findAllByType(Consumes)[0].children).toEqual([`${1}, ${'s'}, ${() => 1}`])
+        expect(renderer.root.findAllByType(Consumes)[0].children).toEqual([
+            `${1}, ${'s'}, ${() => 1}`,
+        ])
     })
 
     test(`consumer should receive mixed contents when some contexts are not provided`, () => {
@@ -47,9 +51,10 @@ describe(`${provide.name}-${consume.name}`, () => {
         const renderer = create(
             <PartialProvides values={[1, () => 1]}>
                 <Consumes>{(c1, c2, c3) => `${c1}, ${c2}, ${c3}`}</Consumes>
-            </PartialProvides>
+            </PartialProvides>,
         )
-        expect(renderer.root.findAllByType(Consumes)[0].children).toEqual([`${1}, ${'str'}, ${() => 1}`])
+        expect(renderer.root.findAllByType(Consumes)[0].children).toEqual([
+            `${1}, ${'str'}, ${() => 1}`,
+        ])
     })
-
 })
