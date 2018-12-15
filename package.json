@@ -1,51 +1,51 @@
 {
-  "name": "react-context-tuple",
-  "version": "0.0.1",
-  "description": "Flatten contexts",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": false,
-  "scripts": {
-    "prepublishOnly": "rm -rf dist && npx tsc",
-    "test": "npx jest"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pinyin/react-context-tuple.git"
-  },
-  "keywords": [
-    "react",
-    "react context",
-    "state management",
-    "IOC"
-  ],
-  "author": "Bo Bao <bob432091@gmail.com> (https://github.com/pinyin)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pinyin/react-context-tuple/issues"
-  },
-  "homepage": "https://github.com/pinyin/react-context-tuple#readme",
-  "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "@types/react": "^16.7.17",
-    "@types/react-test-renderer": "^16.0.3",
-    "jest": "^23.6.0",
-    "react": "^16.6.3",
-    "react-test-renderer": "^16.6.3",
-    "ts-jest": "^23.10.5",
-    "typescript": "^3.2.2"
-  },
-  "dependencies": {
-    "@pinyin/maybe": "0.0.9",
-    "@pinyin/types": "0.0.47",
-    "react": "^16.3.0",
-    "tslib": "^1.9.3"
-  }
+    "name": "react-context-tuple",
+    "version": "0.0.2",
+    "description": "Flatten contexts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "sideEffects": false,
+    "scripts": {
+        "prepublishOnly": "rm -rf dist && npx tsc",
+        "test": "npx jest"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pinyin/react-context-tuple.git"
+    },
+    "keywords": [
+        "react",
+        "react context",
+        "state management",
+        "IOC"
+    ],
+    "author": "Bo Bao <bob432091@gmail.com> (https://github.com/pinyin)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pinyin/react-context-tuple/issues"
+    },
+    "homepage": "https://github.com/pinyin/react-context-tuple#readme",
+    "devDependencies": {
+        "@types/jest": "^23.3.10",
+        "@types/react": "^16.7.17",
+        "@types/react-test-renderer": "^16.0.3",
+        "jest": "^23.6.0",
+        "react": "^16.6.3",
+        "react-test-renderer": "^16.6.3",
+        "ts-jest": "^23.10.5",
+        "typescript": "^3.2.2"
+    },
+    "dependencies": {
+        "@pinyin/maybe": "0.0.9",
+        "@pinyin/types": "0.0.47",
+        "react": "^16.3.0",
+        "tslib": "^1.9.3"
+    }
 }
