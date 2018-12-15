@@ -9,11 +9,7 @@ export function consume<T extends Array<any>>(
         consumers.reduce<any>(
             (children, Current): any => (...parentContent: Array<any>) => (
                 <Current>
-                    {content =>
-                        typeof children === 'function'
-                            ? children(...[content, ...parentContent])
-                            : children
-                    }
+                    {content => children(...[content, ...parentContent])}
                 </Current>
             ),
             props.children || (() => nothing),
@@ -22,8 +18,6 @@ export function consume<T extends Array<any>>(
     return component as any
 }
 
-// prettier-ignore
 export type ResultComponent<T extends any[]> = ComponentType<{
-// prettier-ignore
-    children?: (...content: T) => ReactNode
+    children?: (...values: T) => ReactNode
 }>
