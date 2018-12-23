@@ -7,3 +7,4 @@ src/**/*.js
 .cache
 /report.html
 
+.idea

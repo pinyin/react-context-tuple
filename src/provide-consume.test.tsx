@@ -1,4 +1,3 @@
-import { nothing } from '@pinyin/types'
 import * as React from 'react'
 import { create } from 'react-test-renderer'
 import { consume } from './consume'
@@ -11,14 +10,14 @@ describe(`${provide.name}-${consume.name}`, () => {
     const c2: string = 'str'
     const C2 = React.createContext(c2)
 
-    const c3: () => any = () => nothing
+    const c3: () => any = () => {}
     const C3 = React.createContext(c3)
 
-    const Provides = provide(C1.Provider, C2.Provider, C3.Provider)
-    const Consumes = consume(C1.Consumer, C2.Consumer, C3.Consumer)
+    const Provides = provide(C1, C2, C3)
+    const Consumes = consume(C1, C2, C3)
 
     test(`provider should be renderable`, () => {
-        const renderer = create(<Provides values={[1, '2', () => nothing]} />)
+        const renderer = create(<Provides values={[1, '2', () => {}]} />)
         expect(renderer.root.type).toEqual(Provides)
     })
 
@@ -46,7 +45,7 @@ describe(`${provide.name}-${consume.name}`, () => {
     })
 
     test(`consumer should receive mixed contents when some contexts are not provided`, () => {
-        const PartialProvides = provide(C1.Provider, C3.Provider)
+        const PartialProvides = provide(C1, C3)
 
         const renderer = create(
             <PartialProvides values={[1, () => 1]}>

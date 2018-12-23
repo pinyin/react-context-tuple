@@ -1,6 +1,6 @@
 {
     "name": "react-context-tuple",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "description": "Flatten contexts",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -34,18 +34,18 @@
     "homepage": "https://github.com/pinyin/react-context-tuple#readme",
     "devDependencies": {
         "@types/jest": "^23.3.10",
-        "@types/react": "^16.7.17",
+        "@types/react": "^16.7.18",
         "@types/react-test-renderer": "^16.0.3",
         "jest": "^23.6.0",
-        "react": "^16.6.3",
-        "react-test-renderer": "^16.6.3",
+        "react": "^16.7.0",
+        "react-test-renderer": "^16.7.0",
         "ts-jest": "^23.10.5",
         "typescript": "^3.2.2"
     },
+    "peerDependencies": {
+        "react": "^16.3.0"
+    },
     "dependencies": {
-        "@pinyin/maybe": "0.0.9",
-        "@pinyin/types": "0.0.47",
-        "react": "^16.3.0",
         "tslib": "^1.9.3"
     }
 }
